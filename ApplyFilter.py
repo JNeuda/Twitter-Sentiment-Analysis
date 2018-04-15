@@ -1,8 +1,9 @@
 import pandas as pd 
+import numpy as np
 
 class ApplyFilter():
 
-    def ApplyFilter(df)
+    def ApplyFilter(df):
 
         # filter variables
         min_tweets = 5
@@ -11,12 +12,10 @@ class ApplyFilter():
         max_following = 2500
         lang = "en"
 
-        for row in df:
-            if (tweet["statuses"]["user"]["followers_count"] < max_followers and
-                tweet["statuses"]["user"]["statuses_count"] > min_tweets and
-                tweet["statuses"]["user"]["statuses_count"] < max_tweets and
-                tweet["statuses"]["user"]["friends_count"] < max_following and
-                tweet["statuses"]["user"]["lang"] == lang):
-
+        # grab only the rows that meet the criteria
+        df = df[df.followers < max_followers]
+        df = df[df.status_count > min_tweets]
+        df = df[df.status_count < max_tweets]
+        df = df[df.friends_count < max_following]
 
         return df
