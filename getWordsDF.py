@@ -17,6 +17,6 @@ class getWordsDF():
         df.columns = ['ID', 'DateTime', 'Username', 
                         'tweet_text', 'retweet count', 
                         'Tweet Name', 'followers', 
-                        'friends count', 'status count', 
+                        'friends_count', 'status_count', 
                         'Search Coordinates']
         return df
