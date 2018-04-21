@@ -78,11 +78,11 @@ class ApplyFilter():
             k = analyzer.polarity_scores(df.iloc[i]['Tweet_text'])
             compval1.append(k["compound"])
             
-            b = TextBlob(tweets_df.iloc[i]['tweet_text'])
+            b = TextBlob(tweets_df.iloc[i]['Tweet_text'])
             c = b.sentiment.polarity
             textBlob_list.append(c)
     
-            d = p.clean(tweets_df.iloc[i]['tweet_text'])
+            d = p.clean(tweets_df.iloc[i]['Tweet_text'])
             clean_text.append(d)
             
             i = i + 1
